@@ -1,6 +1,8 @@
 <script setup>
 
-
+definePageMeta({
+  middleware: ['not-auth']
+})
 </script>
 <template>
   <NuxtLoadingIndicator />

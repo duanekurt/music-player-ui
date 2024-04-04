@@ -2,6 +2,7 @@ import { AxiosError, type AxiosResponse } from "axios";
 import { toast } from "vue-sonner";
 
 export default function useResponseToast(response: any, type?: string) {
+    console.log(response)
     if (response instanceof AxiosError) {
         if (response.response?.data.message) {
             toast.error(response.response.data.message)

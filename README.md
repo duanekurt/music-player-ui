@@ -1,7 +1,3 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Setup
 
 Make sure to install the dependencies:
@@ -38,38 +34,25 @@ yarn dev
 bun run dev
 ```
 
-## Production
 
-Build the application for production:
+## Project 
 
-```bash
-# npm
-npm run build
+### Frameworks
 
-# pnpm
-pnpm run build
+- Nuxt 3
+- Bun (Package Manager)
+- ShadCN-Vue (Components / UI Framework)
+- Pinia (State Management)
+- Pinia Persisted State (Local Storage for tokens)
 
-# yarn
-yarn build
-
-# bun
-bun run build
+## Environment Variables
+```
+BASE_API_URL={BACKEND_SERVER_URL}
+API_VERSION=v1
 ```
 
-Locally preview production build:
+## Routes
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- /login 
+- /register
+- / (main music player page)
