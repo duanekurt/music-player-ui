@@ -35,9 +35,9 @@ const actions = {
         const loader = useLoadingIndicator();
         loader.start();
         $this.player_state.is_playing = true
-        // const { data, response } = await useFetchApi('/playlist/play', {
-        //     method: "GET"
-        // });
+        const { data, response } = await useFetchApi('/playlist/play', {
+            method: "GET"
+        });
 
         await $this.getPlaylist();
 

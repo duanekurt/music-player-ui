@@ -1,5 +1,5 @@
 const state = () => ({
-    token: '1|hza7xc8I70Y4qDZjAQpH3e3TaI6YHnlu9suFgZ9Q96b9d1d1',
+    token: '',
     user: {},
     isLoading: false
 });
@@ -18,10 +18,13 @@ const actions = {
             });
 
             if (response.value.status == 200) {
-                if (data.value.data?.token) {
-                    $this.token = data.value.data.token.access_token
-                    $this.user = data.value.data.user
+                console.log(data.value)
+                if (data.value.token) {
+                    $this.token = data.value.token
+                    $this.user = data.value.user
                 }
+
+                router.push('/')
             }
 
         } catch (err) {
@@ -35,17 +38,21 @@ const actions = {
     async register(payload: any): Promise<any> {
         const $this = useAuthStore()
         const loader = useLoadingIndicator();
+        const router = useRouter();
+
         $this.isLoading = true
         loader.start()
         try {
-            const { data, response } = await useFetchApi('/auth/register', {
+            const { data, response } = await useFetchApi('/user/register', {
                 method: 'POST',
                 data: payload
             })
 
-            if (data.value.data?.token) {
-                $this.token = data.value.data.token.access_token
-                $this.user = data.value.data.user
+            if (data.value.token) {
+                $this.token = data.value.token
+                $this.user = data.value.user
+
+                router.push('/')
             }
 
             console.log(response)
