@@ -26,7 +26,7 @@ const playlistStore = usePlaylistStore();
         </CardHeader>
         <CardContent>
           <div class="flex flex-row gap-2 justify-center">
-            <Button size="icon" variant="outline" class="rounded-full border border-blue-700" @click="playlistStore.previous()">
+            <Button size="icon" variant="outline" class="rounded-full border border-blue-700" @click="playlistStore.previous()" :disabled="!playlistStore.player_state.is_playing">
               <StepBack class="size-6" />
             </Button>
 
@@ -38,7 +38,7 @@ const playlistStore = usePlaylistStore();
               <Pause class="size-6" />
             </Button>
 
-            <Button size="icon" variant="outline" class="rounded-full border border-blue-700" @click="playlistStore.next()">
+            <Button size="icon" variant="outline" class="rounded-full border border-blue-700" @click="playlistStore.next()" :disabled="!playlistStore.player_state.is_playing">
               <StepForward class="size-6" />
             </Button>
           </div>

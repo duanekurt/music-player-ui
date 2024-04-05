@@ -28,7 +28,7 @@ onMounted(async () => {
                 <CardTitle>
                     <div class="class flex flex-row justify-center items-center gap-3">
                         {{ playlistStore.playlist.playlist_name }}
-                        <Button variant="outline" size="default" @click="playlistStore.shuffle()">
+                        <Button variant="outline" size="default" @click="playlistStore.shuffle()" :disabled="!playlistStore.player_state.is_playing">
                             <Shuffle class="h-4 w-4" />
                         </Button>
                     </div>
